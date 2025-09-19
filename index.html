@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyer Informativo - Afore Coppel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .id-container {
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .id-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 md:p-8">
+
+    <div class="bg-white rounded-xl shadow-2xl overflow-hidden max-w-lg w-full">
+        <!-- Header con logo -->
+        <div class="bg-white p-4 flex justify-center items-center">
+            <img src="afore 2.png" alt="Logo Afore Coppel" class="max-h-24">
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="p-6 md:p-8 text-center mt-2">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-[#012f6a] mb-4">¿Sabías que...?</h1>
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                Para cualquier trámite o servicio con tu Afore, es indispensable que presentes una identificación oficial válida y vigente.
+            </p>
+
+            <div class="space-y-4">
+                <!-- Secciones de identificaciones -->
+                <div id="credencial-votar" class="id-container bg-gray-100 p-4 md:p-6 rounded-lg border-2 border-yellow-400">
+                    <h2 class="text-xl md:text-2xl font-bold text-[#012f6a] mb-2">Credencial para Votar</h2>
+                    <p class="text-gray-600">Original y Vigente.</p>
+                </div>
+                <div id="ejemplo-credencial-votar" class="hidden mt-4">
+                     <img src="interior_credencial_para_votar.jpg" alt="Ejemplo de Credencial para Votar" class="w-full rounded-lg shadow-md">
+                </div>
+                
+                <div id="pasaporte" class="id-container bg-gray-100 p-4 md:p-6 rounded-lg border-2 border-yellow-400">
+                    <h2 class="text-xl md:text-2xl font-bold text-[#012f6a] mb-2">Pasaporte</h2>
+                    <p class="text-gray-600">Original y Vigente.</p>
+                </div>
+                <div id="ejemplo-pasaporte" class="hidden mt-4">
+                    <img src="is-méxico-passport-the-only-one-that-has-its-parents-v0-05mv0l75y97e1.webp" alt="Ejemplo de Pasaporte" class="w-full rounded-lg shadow-md">
+                </div>
+
+                <div id="matricula-consular" class="id-container bg-gray-100 p-4 md:p-6 rounded-lg border-2 border-yellow-400">
+                    <h2 class="text-xl md:text-2xl font-bold text-[#012f6a] mb-2">Matrícula Consular</h2>
+                    <p class="text-gray-600">Original y Vigente.</p>
+                </div>
+                <div id="ejemplo-matricula-consular" class="hidden mt-4">
+                    <img src="Matrcula-consular.jpg" alt="Ejemplo de Matrícula Consular" class="w-full rounded-lg shadow-md">
+                </div>
+            </div>
+
+            <p class="mt-6 text-sm text-gray-500">
+                Asegúrate de llevar la original para poder realizar tu trámite sin contratiempos.
+            </p>
+            <!-- Nota para extranjeros mejorada visualmente -->
+            <div class="bg-gray-100 border-2 border-blue-600 rounded-lg p-4 mt-6 flex items-start space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-4.42 3.58-8 8-8s8 3.58 8 8c0 4.08-3.05 7.44-7 7.93V12h-1v7.93z"/>
+                </svg>
+                <div class="text-left">
+                    <h3 class="font-bold text-lg text-blue-600">Aviso Importante</h3>
+                    <p class="text-sm text-gray-700 mt-1">Para personas extranjeras, las únicas identificaciones oficiales válidas son el <strong>Pasaporte</strong> y la <strong>Matrícula Consular</strong>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-[#012f6a] p-4 text-center text-white">
+            <p class="text-sm font-semibold">¡Afore Coppel, cerca de ti!</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ids = ['credencial-votar', 'pasaporte', 'matricula-consular'];
+            ids.forEach(id => {
+                const element = document.getElementById(id);
+                const example = document.getElementById(`ejemplo-${id}`);
+                element.addEventListener('click', () => {
+                    example.classList.toggle('hidden');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
